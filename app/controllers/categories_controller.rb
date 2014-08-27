@@ -7,5 +7,35 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    p params
+    @category = Category.find(params[:id])
+    if @category.update_attribute :category_name, params[:category][:category_name]
+      redirect_to category_path(@category)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to root_path
+  end
+
+  # def new
+  #   @categories = Category.new
+  # end
+
+
+  def create
+    @categories = Category.create( :category_name =>params[:category][:category_name])
+
+    redirect_to root_path
+  end
 
 end

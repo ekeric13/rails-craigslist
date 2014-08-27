@@ -1,0 +1,15 @@
+<h1>Edit: <%= @category.category_name%></h1>
+
+
+<%= form_for @category do |f|%>
+  <ul>
+    <li>
+      <%= f.label :category_name %>
+      <%= f.text_field :category_name %>
+    </li>
+    <li>
+      <%= f.submit%>
+    </li>
+  </ul>
+
+<% end%>

@@ -5,3 +5,23 @@
   <a href="/categories/<%=category.id%>"><li><%= category.category_name %></li></a>
 <% end %>
 </ul>
+
+
+
+<h1>Create a new category</h1>
+
+<ul>
+  <% @categories = Category.new%>
+  <%= form_for @categories do |f| %>
+
+    <li>
+      <%= f.label :category_name %>
+      <%= f.text_field :category_name %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+
+<% end %>
+
+</ul>

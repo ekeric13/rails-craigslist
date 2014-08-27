@@ -9,3 +9,8 @@
 
 <a href="/">HOMEPAGE</a>
 
+<!-- <a href="/categories/<%= @category.id %>/edit">edit your page</a>
+ -->
+<span><%= link_to "edit", edit_category_path(@category) %></span>
+
+<span><%= link_to "delete", category_path(@category), :method => :delete %></span>

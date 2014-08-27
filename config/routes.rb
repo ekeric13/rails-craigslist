@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root "categories#index"
-  get "categories/:id" => "categories#show"
+  # get "categories/:id" => "categories#show"
+  # get "categories/:id/edit" => "categories#edit"
+  # put "categories/:id" => "categories#edit"
+  resources :categories
   get "articles/:id" => "articles#show"
 
   # resources :categories
