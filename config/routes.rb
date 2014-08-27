@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "categories#index"
   get "categories/:id" => "categories#show"
+  get "articles/:id" => "articles#show"
 
   # resources :categories
   # resources :articles

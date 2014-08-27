@@ -1,0 +1,8 @@
+<h1><%= @article.title %></h1>
+<br>
+<h5>email: <%= @article.email %></h5><h4>price: $<%= @article.price %></h4>
+<p><%= @article.description %></p>
+
+
+
+<a href="/categories/<%=@article.category.id %>"><%= @article.category.category_name %></a>
