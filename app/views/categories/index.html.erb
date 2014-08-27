@@ -1,8 +1,9 @@
+<div id="content">
 <h1>Here are some categories</h1>
 
 <ul>
 <% @category.each do |category| %>
-  <a href="/categories/<%=category.id%>"><li><%= category.category_name %></li></a>
+  <a data-id= "<%= category.id %>"class="category" href="/categories/<%=category.id%>"><li><%= category.category_name %></li></a>
 <% end %>
 </ul>
 
@@ -13,7 +14,6 @@
 <ul>
   <% @categories = Category.new%>
   <%= form_for @categories do |f| %>
-
     <li>
       <%= f.label :category_name %>
       <%= f.text_field :category_name %>
@@ -25,3 +25,4 @@
 <% end %>
 
 </ul>
+</div>

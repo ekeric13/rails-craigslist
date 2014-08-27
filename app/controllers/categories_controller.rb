@@ -5,10 +5,16 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    render :show, layout: false
+    respond_to do |format|
+      format.html { redirect_to votes_url }
+      format.js { head :ok }
+    end
   end
 
   def edit
     @category = Category.find(params[:id])
+
   end
 
   def update
@@ -27,9 +33,10 @@ class CategoriesController < ApplicationController
     redirect_to root_path
   end
 
-  # def new
-  #   @categories = Category.new
-  # end
+  def new
+    @categories = Category.new
+    redirect_to root_path
+  end
 
 
   def create
